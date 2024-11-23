@@ -1,11 +1,12 @@
 "use client";
 import { Suspense, useEffect, useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { useFrame, Canvas } from "@react-three/fiber";
 import { Text3D, Center, OrbitControls } from "@react-three/drei";
+import * as THREE from "three";
 
 function Logo3D() {
   const [fontLoaded, setFontLoaded] = useState(false);
-  const textRef = useRef<any>();
+  const textRef = useRef<THREE.Group | null>(null);
 
   useFrame(({ clock }) => {
     const elapsed = clock.getElapsedTime();

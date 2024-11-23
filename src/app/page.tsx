@@ -2,7 +2,6 @@
 import dynamic from "next/dynamic";
 import StarsBg from "@/components/StarsBg";
 import Link from "next/link";
-import Image from "next/image";
 
 // Dynamic import for Scene component
 const Scene = dynamic(
