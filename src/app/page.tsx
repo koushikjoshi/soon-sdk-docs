@@ -2,6 +2,7 @@
 import dynamic from "next/dynamic";
 import StarsBg from "@/components/StarsBg";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 
 // Dynamic import for Scene component
 const Scene = dynamic(
@@ -15,6 +16,7 @@ const Scene = dynamic(
 export default function Home() {
   return (
     <div className="w-screen flex flex-col justify-start items-start overflow-x-hidden overflow-y-scroll">
+      <Navbar/>
       <StarsBg />
       <Scene />
       <div className="absolute w-screen top-0 flex flex-col justify-start items-center">
