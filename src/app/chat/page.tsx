@@ -6,9 +6,8 @@ import React, { useState } from "react";
 
 const ChatPage = () => {
   const [textAreaHeight, setTextAreaHeight] = useState("40px");
-  const [stage, setStage] = useState(0);
 
-  const handleTextAreaChange = (e: any) => {
+  const handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const lines = e.target.value.split("\n").length;
     if (lines >= 2) {
       setTextAreaHeight("60px"); // Adjust height for 2 lines
@@ -27,7 +26,8 @@ const ChatPage = () => {
       </div>
       <div className="shadow-md rounded-md w-full h-full overflow-hidden backdrop-blur-sm relative z-50 p-3 flex flex-col justify-start items-start">
         <div className="w-full h-[calc(100%-60px)]">
-          {stage === 0 && <Suggestions />}
+          {/* TODO: Create a state called 'stage' and render this component conditionally */}
+          <Suggestions/>
         </div>
         <div className="absolute bottom-3 left-0 w-full p-3 flex flex-row justify-between items-center gap-x-2">
           <textarea
