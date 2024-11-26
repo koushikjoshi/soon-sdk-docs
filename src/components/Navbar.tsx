@@ -5,7 +5,11 @@ import React from "react";
 const Navbar = () => {
   return (
     <div className="absolute w-screen top-0 left-0 z-20 flex flex-row justify-between items-center pt-10 px-4 lg:px-24 text-red-100">
-      <Link href={'https://soo.network/'} target="_blank" rel="noopener noreferrer">
+      <Link
+        href={"https://soo.network/"}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <svg
           width="340"
           height="126"

@@ -14,11 +14,12 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  icons:{
-    icon: 'https://bridge.testnet.soo.network/assets/soon-logo-D-_yOXAE.svg'
+  icons: {
+    icon: "https://bridge.testnet.soo.network/assets/soon-logo-D-_yOXAE.svg",
   },
   title: "Soon SDK (unofficial)",
-  description: "A lightweight JavaScript SDK for interacting with the SOON network on Solana.",
+  description:
+    "A lightweight JavaScript SDK for interacting with the SOON network on Solana.",
 };
 
 export default function RootLayout({

@@ -16,7 +16,7 @@ const Scene = dynamic(
 export default function Home() {
   return (
     <div className="w-screen flex flex-col justify-start items-start overflow-x-hidden overflow-y-scroll">
-      <Navbar/>
+      <Navbar />
       <StarsBg />
       <Scene />
       <div className="absolute w-screen top-0 flex flex-col justify-start items-center">
@@ -28,7 +28,7 @@ export default function Home() {
       </div>
       <div className="absolute top-[70%] w-screen flex flex-col justify-end items-center gap-y-5 p-7 z-20">
         <Link
-          href={"/docs"}
+          href={"https://soon-sdk-docs-page.vercel.app/"}
           className="rounded-full px-5 py-2 bg-[hsla(349,67%,51%)] hover:bg-red-500 transition-all duration-300 text-white"
         >
           Explore the SDK →
