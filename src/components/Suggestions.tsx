@@ -1,6 +1,18 @@
 import React from "react";
 
-const Suggestions = () => {
+const Suggestions = ({ onSelect }: { onSelect: (text: string) => void }) => {
+  const suggestions = [
+    { emoji: "🤨", text: "What is Solana?" },
+    { emoji: "⁉", text: "What is SOON?" },
+    {
+      emoji: "🛠️",
+      text: "Suggest me some cool project ideas to build with the SOON SDK",
+    },
+    {
+      emoji: "💭",
+      text: "How do I add a wallet connection functionality in my app?",
+    },
+  ];
   return (
     <div className="w-full h-full flex flex-col max-lg:justify-end justify-between items-start pb-4">
       <div className="flex-1 w-full flex flex-col justify-center items-center max-lg:hidden">
@@ -120,22 +132,16 @@ const Suggestions = () => {
         </p>
       </div>
       <div className="w-full grid grid-flow-row grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="flex flex-col justify-start items-start p-2 rounded-md w-full h-full gap-y-1 text-white font-medium text-lg bg-gradient-to-r from-transparent to-[hsla(349,67%,51%)] transition-all duration-500 ease-in-out shadow-gray-400 shadow-sm cursor-pointer hover:shadow-none">
-          <p>🤨</p>
-          <p>What is Solana?</p>
-        </div>
-        <div className="flex flex-col justify-start items-start p-2 rounded-md w-full h-full gap-y-1 text-white font-medium text-lg bg-gradient-to-r from-transparent to-[hsla(349,67%,51%)] transition-all duration-500 ease-in-out shadow-gray-400 shadow-sm cursor-pointer hover:shadow-none">
-          <p>⁉</p>
-          <p>What is SOON?</p>
-        </div>
-        <div className="flex flex-col justify-start items-start p-2 rounded-md w-full h-full gap-y-1 text-white font-medium text-lg bg-gradient-to-r from-transparent to-[hsla(349,67%,51%)] transition-all duration-500 ease-in-out shadow-gray-400 shadow-sm cursor-pointer hover:shadow-none">
-          <p>🛠️</p>
-          <p>Suggest me some cool project ideas to build with the SOON SDK</p>
-        </div>
-        <div className="flex flex-col justify-start items-start p-2 rounded-md w-full h-full gap-y-1 text-white font-medium text-lg bg-gradient-to-r from-transparent to-[hsla(349,67%,51%)] transition-all duration-500 ease-in-out shadow-gray-400 shadow-sm cursor-pointer hover:shadow-none">
-          <p>💭</p>
-          <p>How do I add a wallet connection functionality in my app?</p>
-        </div>
+        {suggestions.map((suggestion, index) => (
+          <div
+            key={index}
+            onClick={() => onSelect(suggestion.text)}
+            className="flex flex-col justify-start items-start p-2 rounded-md w-full h-full gap-y-1 text-white font-medium text-lg bg-gradient-to-r from-transparent to-[hsla(349,67%,51%)] transition-all duration-500 ease-in-out shadow-gray-400 shadow-sm cursor-pointer hover:shadow-none"
+          >
+            <p>{suggestion.emoji}</p>
+            <p>{suggestion.text}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
